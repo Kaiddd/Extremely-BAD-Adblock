@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Extremely BAD Adblock
-// @version      1.4
+// @version      1.5
 // @description  Really bad and wont stop tracking but bypasses where real adblocks fail <3 | Based on generic attributes of ad elements, rather than advanced filterlists, and only deletes elements after loading the page rather than blocking them instantly (Has some false positives, but will work on every common website)
 // @author       Kaid#0001
 // @match        *://*/*
@@ -45,7 +45,7 @@
     {
         elementsArrayUwU = Array.from(document.all);
         elementsArrayUwU.forEach(el => {
-            if (check(el,"advert") || check(el,"adsense") || check(el,"interad") || check(el,"interstitial") || (check(el,"google") && check(el,"ad") && !check(el,"captcha")) || check(el,"bncloud") || check(el,"referral") || check(el,"refid") | check(el,"trafficjunky") || check(el,"pb_template") || check(el,"__clb")){
+            if (check(el,"advert") || check(el,"adsense") || check(el,"interad") || check(el,"interstitial") || (check(el,"google") && check(el,"ad") && !check(el,"captcha") && !check(el,"login")) || check(el,"bncloud") || check(el,"referral") || check(el,"refid") | check(el,"trafficjunky") || check(el,"pb_template") || check(el,"__clb")){
                 el.remove();
             }
         })
