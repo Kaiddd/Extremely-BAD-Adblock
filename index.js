@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Extremely BAD Adblock
 // @version      1.1
-// @description  Really bad and wont stop tracking but bypasses where real adblocks fail <3 | Based on generic attributes of ad elements, rather than advanced filterlists, and only deletes elements after loading the page rather than blocking them instantly
+// @description  Really bad and wont stop tracking but bypasses where real adblocks fail <3 | Based on generic attributes of ad elements, rather than advanced filterlists, and only deletes elements after loading the page rather than blocking them instantly (Has some false positives, but will work on every common website)
 // @author       Kaid#0001
 // @match        *://*/*
 // ==/UserScript==
