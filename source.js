@@ -9,7 +9,7 @@
 
 (function() {
     'use strict';
-    document.documentElement.innerHTML = document.documentElement.innerHTML.replace(/googletagmanager|google-analytics|googleanalytics|googleadservices|adwords|adsense|admob|urchin.com|doubleclick.net/gim,"google ad lmao")
+    document.documentElement.innerHTML = document.documentElement.innerHTML.replace(/googletagmanager|google-analytics|googleanalytics|googleadservices|adwords|adsense|admob|urchin.com|doubleclick.net/gim,"google ad lmao");
 
     let elementsArrayUwU;
 
