@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Extremely BAD Adblock
-// @version      1.8.1
+// @version      1.8.2
 // @description  Really bad and wont stop tracking (Besides *some* google trackers) but bypasses where real adblocks fail <3 | Based on generic attributes of ad elements, rather than advanced filterlists, and only deletes elements after loading the page rather than blocking them instantly (Has some false positives, but will work on every common website)
 // @author       Kaid#0001
 // @run-at       document-start
@@ -26,7 +26,7 @@
            found = true;
         }
 
-        if(el.href && el.href.toLowerCase().includes(txt)){
+        if(el.href && typeof(href) === "string" && el.href.toLowerCase().includes(txt)){
            found = true;
         }
 
@@ -49,13 +49,13 @@
     {
         elementsArrayUwU = Array.from(document.all);
         elementsArrayUwU.forEach(el => {
-            if (check(el,"advert") || check(el,"adsense") || check(el,"tracker") || check(el,"interad") || check(el,"interstitial") || (check(el,"google") && check(el,"ad") && !check(el,"captcha") && !check(el,"login")) || check(el,"bncloud") || check(el,"trafficjunky") || check(el,"pb_template") || check(el,"__clb")){
+            if (check(el,"advert") || check(el,"adsense") || check(el,"tracker") || check(el,"sentry.io") || check(el,"interad") || check(el,"interstitial") || (check(el,"google") && check(el,"ad") && !check(el,"captcha") && !check(el,"login")) || check(el,"bncloud") || check(el,"trafficjunky") || check(el,"pb_template") || check(el,"__clb")){
                 el.remove();
                 counter++;
             }
             if (el.tagName === "SCRIPT") {
-                if (el.innerHTML != el.innerHTML.replace(/googletagmanager|google-analytics|googleanalytics|googleadservices|adwords|adsense|admob|urchin.com|doubleclick.net/gim,"thisIsAGoogleAd.invalid.url")) {
-                    el.innerHTML = el.innerHTML.replace(/googletagmanager|google-analytics|googleanalytics|googleadservices|adwords|adsense|admob|urchin.com|doubleclick.net/gim,"thisIsAGoogleAd.invalid.url");
+                if (el.innerHTML != el.innerHTML.replace(/googletagmanager|google-analytics|sentry.io|googleanalytics|googleadservices|adwords|adsense|admob|urchin.com|doubleclick.net/gim,"thisIsAGoogleAd.invalid.url")) {
+                    el.innerHTML = el.innerHTML.replace(/googletagmanager|google-analytics|sentry.io|googleanalytics|googleadservices|adwords|adsense|admob|urchin.com|doubleclick.net/gim,"thisIsAGoogleAd.invalid.url");
                     counter++;
                 }
                 if (el.src != el.src.replace(/googletagmanager|google-analytics|googleanalytics|googleadservices|adwords|adsense|admob|urchin.com|doubleclick.net/gim,"thisIsAGoogleAd.invalid.url")) {
